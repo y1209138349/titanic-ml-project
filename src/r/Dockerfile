@@ -7,10 +7,9 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
-COPY packages.R .
-RUN Rscript packages.R
+RUN R -e "install.packages(c('readr', 'dplyr'), repos='https://cran.rstudio.com/')"
 
-COPY . .
+COPY src/ ./src/
 RUN mkdir -p /app/outputs
 
-CMD ["Rscript", "analysis.R"]
+CMD ["Rscript", "src/r/analysis.R"]
