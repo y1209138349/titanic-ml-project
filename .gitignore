@@ -1,0 +1,24 @@
+src/data/*.csv
+*.csv
+
+# Output files  
+outputs/*.csv
+
+# Python
+__pycache__/
+*.pyc
+.Python
+venv/
+env/
+
+# R
+.RData
+.Rhistory
+
+# IDE
+.vscode/
+.idea/
+
+# System
+.DS_Store
+Thumbs.db
